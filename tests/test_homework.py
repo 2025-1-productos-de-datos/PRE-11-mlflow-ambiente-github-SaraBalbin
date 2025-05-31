@@ -11,12 +11,19 @@ def test_01():
 
     # Test if the homework script runs without errors
     try:
+        # subprocess.run(
+        #     [
+        #         "source",
+        #         "run.sh",
+        #     ],
+        #     check=True,
+        # )
         subprocess.run(
             [
-                "bash",
+                "source",
                 "run.sh",
             ],
-            check=True,
+            executable="/bin/bash",
         )
     except subprocess.CalledProcessError as e:
         raise Exception(f"Error running the homework script: {e}")
